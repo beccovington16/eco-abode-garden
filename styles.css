@@ -54,11 +54,8 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 /* ---------- Home ---------- */
 
 .hero { background: var(--green); color: var(--sand); padding: 4px 0 20px; }
-.hero[style]::before {
-  content: ''; display: block; height: 170px;
-  background: var(--hero, none) center 60% / cover;
-}
 .hero > * { margin-left: var(--gutter); margin-right: var(--gutter); }
+.hero > .hero-photo { margin: -4px 0 0; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .eyebrow { font-size: .8rem; letter-spacing: .3px; margin-top: 16px; margin-bottom: 0; opacity: .9; }
 .hero h1 { font-size: min(1.9rem, 14vw); margin-top: 4px; margin-bottom: 4px; }
 .hero-text p { margin: 6px 0; font-size: .95rem; }
@@ -223,6 +220,7 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
   :root { --gutter: 32px; }
   #app { max-width: 52rem; }
   .hero { padding-top: 16px; padding-bottom: 28px; }
+  .hero > .hero-photo { margin-top: -16px; aspect-ratio: 16 / 9; object-position: 50% 60%; }
   .hero h1 { font-size: min(2.4rem, 12vw); }
   .hero-text { max-width: 36rem; }
   .map-wrap { padding-top: 24px; }

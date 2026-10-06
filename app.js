@@ -37,7 +37,8 @@ function renderHome() {
     <a class="pin" href="#/stop/${s.slug}" style="left:${s.map.x}%;top:${s.map.y}%" aria-label="${s.number}. ${esc(s.name)}">${s.number}</a>`).join('');
 
   app.innerHTML = `
-    <header class="hero" ${data.photo ? `style="--hero:url('${esc(data.photo)}')"` : ''}>
+    <header class="hero">
+      ${data.photo ? `<img class="hero-photo" src="${esc(data.photo)}" alt="${esc(data.photo_alt || '')}">` : ''}
       <p class="eyebrow">Eco.Abode · ${esc(data.event || '')}</p>
       <h1>Welcome</h1>
       <div class="hero-text">${md(body)}</div>
