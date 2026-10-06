@@ -1,0 +1,203 @@
+/* Eco.Abode open garden. Colours and fonts come from the 2024 booklet.
+   Built for phones held outdoors: large text, strong contrast, big tap targets. */
+
+:root {
+  --green: #3b5e2b;
+  --green-dark: #2f4a22;
+  --green-soft: #eef2e4;
+  --sand: #faf6ee;
+  --sand-deep: #ece4d3;
+  --card: #ffffff;
+  --ink: #2b2118;
+  --ink-soft: #5c5245;
+  --radius: 14px;
+  --heading: 'Poppins', system-ui, sans-serif;
+  --body: 'Open Sans', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--sand);
+  color: var(--ink);
+  font: 17px/1.6 var(--body);
+}
+
+#app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: calc(32px + env(safe-area-inset-bottom));
+}
+
+a { color: var(--green); }
+img { max-width: 100%; display: block; }
+h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
+
+.loading { padding: 40px 16px; text-align: center; color: var(--ink-soft); }
+
+/* ---------- Home ---------- */
+
+.hero { background: var(--green); color: var(--sand); padding: 4px 0 20px; }
+.hero[style]::before {
+  content: ''; display: block; height: 170px;
+  background: var(--hero, none) center 60% / cover;
+}
+.hero > * { margin-left: 16px; margin-right: 16px; }
+.eyebrow { font-size: 13px; letter-spacing: .3px; margin-top: 16px; margin-bottom: 0; opacity: .9; }
+.hero h1 { font-size: 32px; margin-top: 4px; margin-bottom: 4px; }
+.hero-text p { margin: 6px 0; font-size: 16px; }
+
+.map-wrap { padding: 16px 16px 0; }
+.map { position: relative; border-radius: var(--radius); background: #9fb08f; overflow: hidden; }
+.map img { width: 100%; }
+.pin {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #fff; color: var(--green-dark);
+  border: 2px solid var(--green);
+  font: 600 15px/1 var(--heading); text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+.pin:active { background: var(--green); color: #fff; }
+.gate {
+  position: absolute; transform: translate(-50%, -50%);
+  background: var(--green-dark); color: #fff;
+  font: 600 11px/1 var(--heading); padding: 4px 7px; border-radius: 8px;
+}
+
+.note {
+  margin: 14px 16px 0; padding: 12px 14px;
+  background: var(--green-soft); color: var(--green-dark);
+  border-radius: var(--radius); font-size: 15px;
+}
+.note p { margin: 4px 0; }
+.note strong { font-weight: 600; }
+
+.section-title { font-size: 18px; margin: 24px 16px 10px; }
+
+.stop-list, .links { list-style: none; margin: 0 16px; padding: 0; }
+.stop-list li, .links li { margin-bottom: 8px; }
+.stop-list a, .links a {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 52px; padding: 10px 14px;
+  background: var(--card); border-radius: var(--radius);
+  color: var(--green-dark); text-decoration: none; font-weight: 600;
+}
+.num {
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--green); color: #fff; font: 600 14px/1 var(--heading);
+}
+.chev { margin-left: auto; font-size: 22px; line-height: 1; }
+
+.footer { text-align: center; color: var(--ink-soft); font-size: 14px; margin-top: 28px; }
+
+/* ---------- Stop and other pages ---------- */
+
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 16px 4px; font-size: 15px; color: var(--green);
+}
+.topbar a { text-decoration: none; font-weight: 600; padding: 6px 0; }
+
+.page-title { font-size: 30px; margin: 4px 16px 12px; }
+.intro { margin: 0 16px 16px; color: var(--ink-soft); }
+.prose { padding: 4px 16px 0; }
+.prose img { border-radius: var(--radius); margin: 8px 0; }
+.photo { width: calc(100% - 32px); margin: 0 16px; border-radius: var(--radius); }
+.also { font-size: 15px; color: var(--ink-soft); margin: 14px 16px 0; }
+.also strong { color: var(--ink); }
+
+/* Now / before slider: "now" is underneath, "before" is revealed from the left. */
+.compare {
+  position: relative; margin: 0 16px; border-radius: var(--radius);
+  overflow: hidden; touch-action: pan-y; user-select: none; cursor: ew-resize;
+  aspect-ratio: 4 / 3; background: var(--sand-deep);
+}
+.compare img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.compare .before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.handle {
+  position: absolute; top: 0; bottom: 0; left: var(--pos);
+  width: 4px; margin-left: -2px; background: #fff;
+}
+.handle::after {
+  content: '‹ ›'; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #fff; color: var(--green-dark); font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+}
+.handle:focus-visible::after { outline: 3px solid var(--green); }
+.hint {
+  position: absolute; top: 50%; left: calc(var(--pos) + 26px);
+  transform: translateY(-50%);
+  background: #fff; color: var(--green-dark);
+  font-size: 14px; font-weight: 600; padding: 7px 12px; border-radius: 20px;
+  white-space: nowrap; box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+  transition: opacity .2s;
+}
+.compare.used .hint { opacity: 0; }
+.tag {
+  position: absolute; bottom: 10px;
+  background: rgba(255, 255, 255, .9); color: var(--ink);
+  font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 10px;
+}
+.tag-now { right: 10px; }
+.tag-before { left: 10px; opacity: 0; transition: opacity .2s; }
+.compare.used .tag-before { opacity: 1; }
+
+.tiles { display: flex; gap: 10px; overflow-x: auto; padding: 2px 16px 6px; scrollbar-width: none; }
+.plant-tile {
+  flex: none; width: 92px; padding: 0; border: 0; background: none;
+  font: 600 13px/1.3 var(--body); color: var(--green-dark); text-align: center; cursor: pointer;
+}
+.plant-tile img, .plant-tile .tile-placeholder {
+  width: 92px; height: 72px; border-radius: 12px; margin-bottom: 5px; object-fit: cover;
+}
+.tile-placeholder {
+  display: grid; place-items: center;
+  background: #c9d6b3; color: var(--green-dark); font: 600 28px/1 var(--heading);
+}
+
+.next {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 26px 16px 0; padding: 16px 18px; border-radius: var(--radius);
+  background: var(--green); color: var(--sand); text-decoration: none;
+  font: 600 18px/1.3 var(--heading);
+}
+.next small { display: block; font: 400 13px/1.4 var(--body); opacity: .9; }
+.next span:last-child { font-size: 24px; }
+
+.plant-card { margin: 0 16px 12px; padding: 14px 16px; background: var(--card); border-radius: var(--radius); scroll-margin-top: 12px; }
+.plant-card img { border-radius: 10px; margin-bottom: 10px; }
+.plant-card h2 { font-size: 20px; margin: 0; }
+.plant-card p { margin: 6px 0; }
+.plant-card .also { margin: 8px 0 0; }
+.botanical { font-style: italic; color: var(--ink-soft); font-size: 14px; margin: 2px 0 0; }
+
+/* ---------- Plant pop-up (bottom sheet) ---------- */
+
+.sheet {
+  width: 100%; max-width: 520px; max-height: 85vh;
+  margin: auto auto 0; padding: 10px 18px calc(22px + env(safe-area-inset-bottom));
+  border: 0; border-radius: 20px 20px 0 0;
+  background: var(--sand); color: var(--ink);
+}
+.sheet[open] { animation: slide-up .25s ease-out; }
+.sheet::backdrop { background: rgba(0, 0, 0, .4); }
+@keyframes slide-up { from { transform: translateY(100%); } }
+.sheet-grip { width: 40px; height: 4px; border-radius: 2px; background: #cfc6b4; margin: 0 auto 12px; }
+.sheet-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.sheet h2 { font-size: 22px; margin: 0; }
+.sheet-close {
+  flex: none; width: 40px; height: 40px; border-radius: 50%; border: 0;
+  background: var(--sand-deep); color: var(--ink); font-size: 16px; cursor: pointer;
+}
+.sheet-photo { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius); margin: 12px 0 4px; }
+.sheet-link { display: inline-block; margin-top: 12px; font-weight: 600; text-decoration: none; padding: 6px 0; }
+.sheet .also { margin: 14px 0 0; }

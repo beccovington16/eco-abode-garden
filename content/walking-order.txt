@@ -1,0 +1,11 @@
+# The order visitors walk the garden. A Stop's number is its line here.
+# One Stop per line: the name of its file in content/stops (without .md).
+entrance-gardens
+middle-garden
+main-garden
+northern-gardens
+tiered-garden
+water-tank-art
+off-grid
+rock-garden
+lexies-run
