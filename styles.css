@@ -241,3 +241,4 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
   .sheet { max-width: 40rem; }
   .sheet-photo { height: 260px; }
 }
+.handle-name { font-weight: 400; color: var(--ink-soft); }

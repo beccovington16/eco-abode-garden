@@ -65,6 +65,7 @@ function renderHome() {
     <h2 class="section-title">More about Eco.Abode</h2>
     <ul class="links">
       ${FEATURE_LINKS.map(([href, label]) => `<li><a href="${href}">${label}<span class="chev">›</span></a></li>`).join('')}
+      ${data.instagram ? `<li><a href="https://www.instagram.com/${encodeURIComponent(data.instagram)}/" target="_blank" rel="noopener">Follow us on Instagram <span class="handle-name">@${esc(data.instagram)}</span><span class="chev">↗</span></a></li>` : ''}
     </ul>
     <p class="footer">Thanks for visiting · Shaun, Bec and Lexie</p>`;
 }
