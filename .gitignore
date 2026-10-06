@@ -1,2 +1,4 @@
 .DS_Store
 .claude/
+# Bec's original photos (full size); the site uses the resized copies in images/stops
+images/[Gg]arden *

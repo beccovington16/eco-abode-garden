@@ -163,6 +163,7 @@ function setUpCompare(el) {
     el.style.setProperty('--pos', `${pct}%`);
     handle.setAttribute('aria-valuenow', Math.round(pct));
     el.classList.add('used');
+    el.classList.toggle('mostly-before', pct > 85);
   };
   const fromEvent = (e) => {
     const r = el.getBoundingClientRect();

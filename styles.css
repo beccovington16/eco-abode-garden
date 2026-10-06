@@ -165,7 +165,8 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
   background: rgba(255, 255, 255, .9); color: var(--ink);
   font-size: .72rem; font-weight: 600; padding: 3px 9px; border-radius: 10px;
 }
-.tag-now { right: 10px; }
+.tag-now { right: 10px; transition: opacity .2s; }
+.compare.mostly-before .tag-now { opacity: 0; }
 .tag-before { left: 10px; opacity: 0; transition: opacity .2s; }
 .compare.used .tag-before { opacity: 1; }
 
