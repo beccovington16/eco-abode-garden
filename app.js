@@ -65,9 +65,16 @@ function renderHome() {
     <h2 class="section-title">More about Eco.Abode</h2>
     <ul class="links">
       ${FEATURE_LINKS.map(([href, label]) => `<li><a href="${href}">${label}<span class="chev">›</span></a></li>`).join('')}
-      ${data.instagram ? `<li><a href="https://www.instagram.com/${encodeURIComponent(data.instagram)}/" target="_blank" rel="noopener">Follow us on Instagram <span class="handle-name">@${esc(data.instagram)}</span><span class="chev">↗</span></a></li>` : ''}
     </ul>
-    <p class="footer">Thanks for visiting · Shaun, Bec and Lexie</p>`;
+    <footer class="footer">
+      <p>Thanks for visiting · Shaun, Bec and Lexie</p>
+      ${data.instagram ? `
+        <a class="social" href="https://www.instagram.com/${encodeURIComponent(data.instagram)}/" target="_blank" rel="noopener" aria-label="Eco.Abode on Instagram">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>` : ''}
+    </footer>`;
 }
 
 function renderStop(slug) {

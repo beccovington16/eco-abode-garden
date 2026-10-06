@@ -110,6 +110,8 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 .chev { margin-left: auto; font-size: 1.3rem; line-height: 1; }
 
 .footer { text-align: center; color: var(--ink-soft); font-size: .82rem; margin: 28px var(--gutter) 0; }
+.footer p { margin: 0 0 6px; }
+.social { display: inline-grid; place-items: center; width: 44px; height: 44px; color: var(--green-dark); }
 
 /* ---------- Stop and other pages ---------- */
 
@@ -241,4 +243,3 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
   .sheet { max-width: 40rem; }
   .sheet-photo { height: 260px; }
 }
-.handle-name { font-weight: 400; color: var(--ink-soft); }
