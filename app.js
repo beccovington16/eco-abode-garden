@@ -104,6 +104,7 @@ function renderPlants(focusSlug) {
     ${topBar('Plant guide')}
     <h1 class="page-title">Plant guide</h1>
     <p class="intro">The plants visitors ask us about most. You'll find them all over the garden.</p>
+    <div class="plant-guide">
     ${garden.plants.map((p) => `
       <article class="plant-card" id="plant-${p.slug}">
         ${p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">` : ''}
@@ -111,7 +112,8 @@ function renderPlants(focusSlug) {
         ${p.botanical ? `<p class="botanical">${esc(p.botanical)}</p>` : ''}
         ${md(p.description)}
         ${p.stops.length ? `<p class="also"><strong>Find it at:</strong> ${p.stops.map((s) => `<a href="#/stop/${s.slug}">${esc(s.name)}</a>`).join(', ')}</p>` : ''}
-      </article>`).join('')}`;
+      </article>`).join('')}
+    </div>`;
   if (focusSlug) document.getElementById(`plant-${focusSlug}`)?.scrollIntoView();
 }
 
