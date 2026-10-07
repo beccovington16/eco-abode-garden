@@ -133,7 +133,7 @@ async function renderPage(slug) {
   app.innerHTML = `
     ${topBar()}
     <h1 class="page-title">${esc(data.title || slug)}</h1>
-    ${data.photo ? `<img class="photo" src="${esc(data.photo)}" alt="">` : ''}
+    ${data.photo ? `<img class="photo" src="${esc(data.photo)}" alt="${esc(data.photo_alt || '')}">` : ''}
     <div class="prose">${md(body)}</div>`;
 }
 

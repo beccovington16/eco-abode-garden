@@ -1,13 +1,16 @@
 ---
 title: Fire protection
-photo:
+photo: images/pages/fire-protection.jpg
+photo_alt: A huge plume of bushfire smoke rising behind our house
 ---
-Early in our time at Eco.Abode we made the decision that we wanted to defend the property from fire, and we've been chipping away at improvements ever since.
+When we took on Eco.Abode, one of the first big decisions we made was that we'd stay and defend the property if fire ever came. We've been chipping away at it ever since.
 
-We've still got a long way to go, but you'll see many things around the house that are clear decisions made to help with that preparation: the sand mulch, the good clearing we keep between the bush and the house, the bunker and the water pump plant.
+We've still got a long way to go, but keep an eye out on your walk and you'll spot plenty of choices we've made with defence in mind: the sand mulch, the clearing we keep between the bush and the house, the bunker ([Stop 8](#/stop/rock-garden)) and the water pump plant.
 
-In January this year, as many of you will know, a fire started in Ravenswood, just 5km from our house and heading straight for us. We were 5 hours away, so even with the best intentions to defend, all we could do was cross our fingers and hope for the best. We were one of the lucky ones: the wind changed direction early enough that it missed us. But it's only spurred on our desire to keep building our defence systems.
+On 9 January, a fire started in Ravenswood, just 5km away and heading straight for us. We were five hours from home. All that planning, and there was nothing we could do but watch the updates, wait and hope. It was a long, sick-to-the-stomach kind of day. Then the wind changed, early enough that the fire missed us. We know just how lucky we were.
 
-We know defending is a pretty scary idea to many, and we're not naive about the mental, physical and emotional challenges that come with it. We've been educating ourselves heavily, and we believe so much of the fear comes from a lack of understanding.
+If anything, that day made us even more determined to keep going.
 
-**If you'd like to know more, Bec is happy to chat about it. Leave Shaun to talk about the gardens 😉**
+Choosing to defend is a deeply personal decision, and it isn't right for everyone. Leaving early is most often the best and safest plan. We're not naive about the physical, mental and emotional toll defending can take. For us, learning as much as we can has taken a lot of the fear out of it.
+
+Want to know more? Bec's here to geek out about fire defence with you.
