@@ -10,4 +10,4 @@ The southern end of the house was drab when we moved in, with two big grey concr
 
 The artist is Alex Sugar, who specialises in flora and fauna. His style was exactly what we were after.
 
-The gardens around the tanks give you a glimpse of what was here before we arrived. We haven't started on them yet because our fire protection plan will shape what we do here.
+The gardens around the tanks give you a glimpse of what was here before we arrived. Right now the whole area is a work in progress while our new water pump plant goes in. If you've visited before, you'll know there's always something new… and always something being dug up. That's half the fun of a property like this (so we keep telling ourselves).
