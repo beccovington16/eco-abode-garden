@@ -192,8 +192,12 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 .next small { display: block; font: 400 .78rem/1.4 var(--body); opacity: .9; }
 .next span:last-child { font-size: 1.4rem; }
 
-.plant-card { margin: 0 var(--gutter) 12px; padding: 14px 16px; background: var(--card); border-radius: var(--radius); scroll-margin-top: 12px; }
-.plant-card img { border-radius: 10px; margin-bottom: 10px; }
+/* Photo beside the words; the photo shrinks a little on narrow screens and with very large text. */
+.plant-card {
+  display: grid; grid-template-columns: min(6.5rem, 30vw) minmax(0, 1fr); gap: 14px; align-items: start;
+  margin: 0 var(--gutter) 12px; padding: 14px; background: var(--card); border-radius: var(--radius); scroll-margin-top: 12px;
+}
+.plant-photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
 .plant-card h2 { font-size: 1.18rem; margin: 0; }
 .plant-card p { margin: 6px 0; }
 .plant-card .also { margin: 8px 0 0; }

@@ -116,11 +116,15 @@ function renderPlants(focusSlug) {
     <div class="plant-guide">
     ${garden.plants.map((p) => `
       <article class="plant-card" id="plant-${p.slug}">
-        ${p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">` : ''}
-        <h2>${esc(p.name)}</h2>
-        ${p.botanical ? `<p class="botanical">${esc(p.botanical)}</p>` : ''}
-        ${md(p.description)}
-        ${p.stops.length ? `<p class="also"><strong>Find it at:</strong> ${p.stops.map((s) => `<a href="#/stop/${s.slug}">${esc(s.name)}</a>`).join(', ')}</p>` : ''}
+        ${p.photo
+          ? `<img class="plant-photo" src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">`
+          : `<span class="plant-photo tile-placeholder" aria-hidden="true">${esc(p.name[0])}</span>`}
+        <div class="plant-text">
+          <h2>${esc(p.name)}</h2>
+          ${p.botanical ? `<p class="botanical">${esc(p.botanical)}</p>` : ''}
+          ${md(p.description)}
+          ${p.stops.length ? `<p class="also"><strong>Find it at:</strong> ${p.stops.map((s) => `<a href="#/stop/${s.slug}">${esc(s.name)}</a>`).join(', ')}</p>` : ''}
+        </div>
       </article>`).join('')}
     </div>`;
   if (focusSlug) document.getElementById(`plant-${focusSlug}`)?.scrollIntoView();
