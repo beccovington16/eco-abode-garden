@@ -158,7 +158,7 @@ function drawPlantList() {
           ${p.botanical ? `<p class="botanical">${esc(p.botanical)}</p>` : ''}
           ${p.native ? '' : '<p class="tag-exotic">Not native</p>'}
           ${extra ? md(extra.description) : ''}
-          ${p.where.length ? `<p class="also"><strong>Find it in:</strong> ${p.where.map((w) => `<button type="button" class="bed-link" data-bed="${w.key}">${esc(w.label)}</button>`).join(', ')}</p>` : ''}
+          ${p.where.length ? `<div class="also"><strong>Find it in:</strong><ul class="where-list">${p.where.map((w) => `<li>${esc(w.label)}</li>`).join('')}</ul></div>` : ''}
         </div>
       </details>`;
   });
@@ -242,8 +242,6 @@ function setUpCompare(el) {
 app.addEventListener('click', (e) => {
   const view = e.target.closest('[data-view]');
   if (view) setPlantView(view.dataset.view);
-  const bed = e.target.closest('.bed-link');
-  if (bed) { setPlantView('bed', bed.dataset.bed); document.querySelector('.plant-filter').scrollIntoView(); }
 });
 app.addEventListener('change', (e) => {
   if (e.target.id === 'bed-select') setPlantView('bed', e.target.value);
