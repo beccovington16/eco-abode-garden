@@ -170,18 +170,20 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 .tag-before { left: 10px; opacity: 0; transition: opacity .2s; }
 .compare.used .tag-before { opacity: 1; }
 
-.tiles { display: flex; gap: 10px; overflow-x: auto; padding: 2px var(--gutter) 6px; scrollbar-width: none; }
-.plant-tile {
-  flex: none; width: 5.4rem; padding: 0; border: 0; background: none;
-  font: 600 .78rem/1.3 var(--body); color: var(--green-dark); text-align: center; cursor: pointer;
-}
-.plant-tile img, .plant-tile .tile-placeholder {
-  width: 100%; height: 4.25rem; border-radius: 12px; margin-bottom: 5px; object-fit: cover;
-}
 .tile-placeholder {
   display: grid; place-items: center;
   background: #c9d6b3; color: var(--green-dark); font: 600 1.65rem/1 var(--heading);
 }
+
+/* Link from each Stop to the Plant Guide */
+.plants-link {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  margin: 22px var(--gutter) 0; padding: 14px 18px; border-radius: var(--radius);
+  background: var(--card); border: 2px solid var(--green-soft);
+  color: var(--green-dark); text-decoration: none; font: 600 1rem/1.3 var(--heading);
+}
+.plants-link small { display: block; font: 400 .78rem/1.4 var(--body); color: var(--ink-soft); }
+.plants-link .chev { margin-left: 0; color: var(--green); }
 
 .next {
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
@@ -192,38 +194,47 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 .next small { display: block; font: 400 .78rem/1.4 var(--body); opacity: .9; }
 .next span:last-child { font-size: 1.4rem; }
 
-/* Photo beside the words; the photo shrinks a little on narrow screens and with very large text. */
-.plant-card {
-  display: grid; grid-template-columns: min(6.5rem, 30vw) minmax(0, 1fr); gap: 14px; align-items: start;
-  margin: 0 var(--gutter) 12px; padding: 14px; background: var(--card); border-radius: var(--radius); scroll-margin-top: 12px;
+/* Plant Guide: a tappable row per plant (photo and name) that opens in place to show the details. */
+.plant-card { margin: 0 var(--gutter) 10px; background: var(--card); border-radius: var(--radius); scroll-margin-top: 12px; overflow: hidden; }
+.plant-card summary {
+  display: flex; align-items: center; gap: 14px; padding: 10px 14px 10px 10px;
+  list-style: none; cursor: pointer; min-height: 3.1rem;
 }
-.plant-photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
-.plant-card h2 { font-size: 1.18rem; margin: 0; }
-.plant-card p { margin: 6px 0; }
-.plant-card .also { margin: 8px 0 0; }
+.plant-card summary::-webkit-details-marker { display: none; }
+.plant-card summary:focus-visible { outline: 3px solid var(--green); outline-offset: -3px; border-radius: var(--radius); }
+.plant-photo { flex: none; width: min(4.5rem, 22vw); aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+.plant-photo.tile-placeholder { font-size: 1.4rem; }
+.plant-card h3 { font-family: var(--heading); font-weight: 600; font-size: 1.05rem; line-height: 1.25; margin: 0; color: var(--green-dark); }
+.plant-card .chev { color: var(--green); transition: transform .2s; }
+.plant-card[open] .chev { transform: rotate(90deg); }
+.plant-text { padding: 0 16px 14px; }
+.plant-photo-large { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
+.plant-text p { margin: 6px 0; }
+.plant-text .also { margin: 8px 0 0; }
+/* A–Z / By garden bed switch, bed picker and letter headings */
+.plant-filter {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0 var(--gutter) 12px;
+  padding: 4px; background: var(--sand-deep); border-radius: var(--radius);
+}
+.plant-filter button {
+  min-height: 2.75rem; border: 0; border-radius: 10px; background: none; cursor: pointer;
+  font: 600 .95rem/1.2 var(--body); color: var(--green-dark);
+}
+.plant-filter button[aria-pressed="true"] { background: var(--green); color: #fff; }
+.bed-picker { display: block; margin: 0 var(--gutter) 12px; }
+.bed-picker[hidden] { display: none; }
+.bed-picker span { display: block; font-size: .85rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 4px; }
+.bed-picker select {
+  width: 100%; min-height: 2.9rem; padding: 0 12px; font: 600 1rem var(--body); color: var(--ink);
+  background: var(--card); border: 2px solid var(--green); border-radius: 10px;
+}
+.plant-count { margin: 0 var(--gutter) 10px; font-size: .85rem; color: var(--ink-soft); }
+.plant-letter { font-size: 1.1rem; color: var(--green); margin: 18px var(--gutter) 8px; }
+.plant-letter:first-child { margin-top: 0; }
+.tag-exotic { display: inline-block; font-size: .78rem; font-weight: 600; color: #7a4a12; background: #f6e7cf; padding: 2px 9px; border-radius: 10px; }
+.bed-link { border: 0; background: none; padding: 0; font: inherit; color: var(--green); text-decoration: underline; cursor: pointer; }
+
 .botanical { font-style: italic; color: var(--ink-soft); font-size: .82rem; margin: 2px 0 0; }
-
-/* ---------- Plant pop-up (bottom sheet) ---------- */
-
-.sheet {
-  width: 100%; max-width: 34rem; max-height: 85vh;
-  margin: auto auto 0; padding: 10px 18px calc(22px + env(safe-area-inset-bottom));
-  border: 0; border-radius: 20px 20px 0 0;
-  background: var(--sand); color: var(--ink);
-}
-.sheet[open] { animation: slide-up .25s ease-out; }
-.sheet::backdrop { background: rgba(0, 0, 0, .4); }
-@keyframes slide-up { from { transform: translateY(100%); } }
-.sheet-grip { width: 40px; height: 4px; border-radius: 2px; background: #cfc6b4; margin: 0 auto 12px; }
-.sheet-head { position: sticky; top: -10px; padding-top: 10px; margin-top: -10px; background: var(--sand); z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-.sheet h2 { font-size: 1.3rem; margin: 0; }
-.sheet-close {
-  flex: none; width: 2.4rem; height: 2.4rem; border-radius: 50%; border: 0;
-  background: var(--sand-deep); color: var(--ink); font-size: 1rem; cursor: pointer;
-}
-.sheet-photo { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius); margin: 12px 0 4px; }
-.sheet-link { display: inline-block; margin-top: 12px; font-weight: 600; text-decoration: none; padding: 6px 0; }
-.sheet .also { margin: 14px 0 0; }
 
 /* ---------- Tablets ---------- */
 
@@ -240,11 +251,8 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
   .page-title { font-size: min(2.1rem, 9vw); margin-top: 12px; }
   .prose, .intro { max-width: 40rem; }
   .compare { aspect-ratio: 3 / 2; }
-  .tiles { flex-wrap: wrap; overflow: visible; gap: 14px; }
-  .plant-tile { width: 7rem; }
-  .plant-tile img, .plant-tile .tile-placeholder { height: 5.5rem; }
-  .plant-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 var(--gutter); }
+  .plant-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 var(--gutter); align-items: start; }
   .plant-guide .plant-card { margin: 0; }
-  .sheet { max-width: 40rem; }
-  .sheet-photo { height: 260px; }
+  .plant-guide .plant-letter { grid-column: 1 / -1; margin: 12px 0 0; }
+  .plant-filter, .bed-picker { max-width: 34rem; }
 }

@@ -1,0 +1,14 @@
+# Garden beds in the Plant Guide, matched to the numbered Stops on the map.
+#
+# Each line: map number | name | audit beds
+#   map number   the Stop number on the map, or "-" for a bed that isn't on the map (listed last)
+#   audit beds   the bed numbers used in the "beds" column of plant-list.csv,
+#                each with a short name for that part of the garden, e.g. "2 fish pond"
+1 | Entrance Gardens | 12
+2 | Middle Garden | 11
+3 | Main Garden | 1 front door, 2 fish pond, 3 olive tree, 4 olive tree, 5 Silver Princess, 6 tulip bed
+4 | Northern Gardens | 8
+5 | Tiered Garden | 9 lower tiers, 10 upper tiers
+8 | Rock Garden | 14
+9 | Lexie's Run | 13
+- | West side and above the water tanks | 7 west side, 15 above the water tanks

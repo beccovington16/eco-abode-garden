@@ -34,6 +34,10 @@ _Avoid_: Label, tag
 
 ## Plants
 
+**Garden bed**:
+A planted area as the Plant Guide groups it, numbered to match its Stop on the Map. One Garden bed can take in several beds from the plant audit (Main Garden covers the front door, fish pond, olive tree, Silver Princess and tulip beds).
+_Avoid_: Audit bed (for this grouping), section, area
+
 **Key Plant**:
 A plant that grows across several Stops and that visitors often ask about.
 _Avoid_: Common plant, feature plant, hero plant

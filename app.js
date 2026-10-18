@@ -5,7 +5,6 @@
 //   #/page/about-us       a Feature or other page from content/pages
 
 const app = document.getElementById('app');
-const sheet = document.getElementById('plant-sheet');
 let garden;
 
 const FEATURE_LINKS = [
@@ -20,13 +19,6 @@ const md = (s) => marked.parse(s || '');
 
 function topBar(right = '') {
   return `<nav class="topbar"><a href="#/">‹ Map</a><span>${right}</span></nav>`;
-}
-
-function plantTile(plant) {
-  const picture = plant.photo
-    ? `<img src="${esc(plant.photo)}" alt="" loading="lazy">`
-    : `<span class="tile-placeholder" aria-hidden="true">${esc(plant.name[0])}</span>`;
-  return `<button class="plant-tile" type="button" data-plant="${esc(plant.name)}">${picture}<span>${esc(plant.name)}</span></button>`;
 }
 
 // ---------- Pages ----------
@@ -81,7 +73,6 @@ function renderStop(slug) {
   const stop = garden.findStop(slug);
   if (!stop) return renderNotFound();
   const next = garden.stops[stop.number]; // number is 1-based, so this is the following Stop
-  const plants = stop.keyPlants.map((n) => garden.findPlant(n)).filter(Boolean);
 
   const photo = stop.before
     ? compareMarkup(stop)
@@ -93,12 +84,10 @@ function renderStop(slug) {
     ${photo}
     <div class="prose">${md(stop.body)}</div>
 
-    ${plants.length ? `
-      <h2 class="section-title">Key plants here</h2>
-      <div class="tiles">${plants.map(plantTile).join('')}</div>` : ''}
-
-    ${stop.otherPlants.length ? `
-      <p class="also"><strong>Also here:</strong> ${esc(stop.otherPlants.join(', '))}</p>` : ''}
+    <a class="plants-link" href="#/plants">
+      <span><small>Wondering what that plant is?</small>See every plant in our garden</span>
+      <span class="chev" aria-hidden="true">›</span>
+    </a>
 
     ${next
       ? `<a class="next" href="#/stop/${next.slug}"><span><small>Next stop · ${next.number}</small>${esc(next.name)}</span><span aria-hidden="true">→</span></a>`
@@ -108,26 +97,92 @@ function renderStop(slug) {
   if (compare) setUpCompare(compare);
 }
 
-function renderPlants(focusSlug) {
+// Which way the Plant Guide is browsed; remembered while the visitor moves around the site.
+const plantView = { mode: 'az', bed: null };
+
+async function renderPlants(focusSlug) {
+  if (!garden.plantList) {
+    app.innerHTML = `${topBar('Plant guide')}<p class="loading">Loading the plants…</p>`;
+    garden.plantList = await garden.loadPlantList();
+  }
+  const { plants, beds } = garden.plantList;
+  if (plantView.bed === null) plantView.bed = String(beds[0].key);
+  if (focusSlug && plants.some((p) => p.slug === focusSlug)) plantView.mode = 'az';
+
   app.innerHTML = `
     ${topBar('Plant guide')}
     <h1 class="page-title">Plant guide</h1>
-    <p class="intro">The plants visitors ask us about most. You'll find them all over the garden.</p>
-    <div class="plant-guide">
-    ${garden.plants.map((p) => `
-      <article class="plant-card" id="plant-${p.slug}">
-        ${p.photo
-          ? `<img class="plant-photo" src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">`
-          : `<span class="plant-photo tile-placeholder" aria-hidden="true">${esc(p.name[0])}</span>`}
+    <p class="intro">Every plant in our garden, all ${plants.length} of them. Tap a plant to find out more.</p>
+    <div class="plant-filter" role="group" aria-label="Browse plants">
+      <button type="button" data-view="az" aria-pressed="${plantView.mode === 'az'}">A–Z</button>
+      <button type="button" data-view="bed" aria-pressed="${plantView.mode === 'bed'}">By garden bed</button>
+    </div>
+    <label class="bed-picker" ${plantView.mode === 'bed' ? '' : 'hidden'}>
+      <span>Garden bed</span>
+      <select id="bed-select">
+        ${beds.map((b) => `<option value="${b.key}" ${String(b.key) === plantView.bed ? 'selected' : ''}>${esc(b.label)}</option>`).join('')}
+      </select>
+    </label>
+    <p class="plant-count" id="plant-count" aria-live="polite"></p>
+    <div class="plant-guide" id="plant-list"></div>`;
+
+  drawPlantList();
+  const focused = focusSlug && document.getElementById(`plant-${focusSlug}`);
+  if (focused) { openPlantCard(focused); focused.scrollIntoView(); }
+}
+
+function drawPlantList() {
+  const { plants, beds } = garden.plantList;
+  const bedLabel = beds.find((b) => String(b.key) === plantView.bed)?.label || '';
+  const shown = plantView.mode === 'bed' ? plants.filter((p) => p.where.some((w) => String(w.key) === plantView.bed)) : plants;
+
+  let letter = '';
+  const items = shown.map((p) => {
+    let heading = '';
+    if (plantView.mode === 'az') {
+      const first = garden.plantList.sortKey(p.name)[0].toUpperCase();
+      if (first !== letter) { letter = first; heading = `<h2 class="plant-letter">${esc(first)}</h2>`; }
+    }
+    const extra = garden.findPlant(p.name); // Key Plants also have a description
+    return `${heading}
+      <details class="plant-card" id="plant-${p.slug}" name="plant-guide">
+        <summary>
+          ${p.thumb
+            ? `<img class="plant-photo" src="${esc(p.thumb)}" alt="" loading="lazy">`
+            : `<span class="plant-photo tile-placeholder" aria-hidden="true">${esc(garden.plantList.sortKey(p.name)[0].toUpperCase())}</span>`}
+          <h3>${esc(p.name)}</h3>
+          <span class="chev" aria-hidden="true">›</span>
+        </summary>
         <div class="plant-text">
-          <h2>${esc(p.name)}</h2>
+          ${p.photo ? `<img class="plant-photo-large" data-src="${esc(p.photo)}" alt="${esc(p.name)}">` : ''}
           ${p.botanical ? `<p class="botanical">${esc(p.botanical)}</p>` : ''}
-          ${md(p.description)}
-          ${p.stops.length ? `<p class="also"><strong>Find it at:</strong> ${p.stops.map((s) => `<a href="#/stop/${s.slug}">${esc(s.name)}</a>`).join(', ')}</p>` : ''}
+          ${p.native ? '' : '<p class="tag-exotic">Not native</p>'}
+          ${extra ? md(extra.description) : ''}
+          ${p.where.length ? `<p class="also"><strong>Find it in:</strong> ${p.where.map((w) => `<button type="button" class="bed-link" data-bed="${w.key}">${esc(w.label)}</button>`).join(', ')}</p>` : ''}
         </div>
-      </article>`).join('')}
-    </div>`;
-  if (focusSlug) document.getElementById(`plant-${focusSlug}`)?.scrollIntoView();
+      </details>`;
+  });
+
+  document.getElementById('plant-list').innerHTML = items.join('');
+  document.getElementById('plant-count').textContent = plantView.mode === 'bed'
+    ? `${shown.length} plants in ${bedLabel}`
+    : `${shown.length} plants, A–Z`;
+}
+
+// The larger photo only downloads when a plant is opened, to save data on 4G.
+function openPlantCard(card) {
+  card.open = true;
+  const img = card.querySelector('img[data-src]');
+  if (img) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
+}
+
+function setPlantView(mode, bed) {
+  plantView.mode = mode;
+  if (bed) plantView.bed = String(bed);
+  document.querySelectorAll('[data-view]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.view === mode));
+  document.querySelector('.bed-picker').hidden = mode !== 'bed';
+  document.getElementById('bed-select').value = plantView.bed;
+  drawPlantList();
 }
 
 async function renderPage(slug) {
@@ -184,32 +239,23 @@ function setUpCompare(el) {
 
 // ---------- Plant pop-up ----------
 
-function openPlant(name) {
-  const plant = garden.findPlant(name);
-  if (!plant) return;
-  document.getElementById('plant-sheet-name').textContent = plant.name;
-  document.getElementById('plant-sheet-botanical').textContent = plant.botanical;
-  const elsewhere = plant.stops.filter((s) => `#/stop/${s.slug}` !== location.hash);
-  document.getElementById('plant-sheet-body').innerHTML = `
-    ${plant.photo ? `<img class="sheet-photo" src="${esc(plant.photo)}" alt="${esc(plant.name)}">` : `<div class="sheet-photo tile-placeholder" aria-hidden="true">${esc(plant.name[0])}</div>`}
-    ${md(plant.description)}
-    ${elsewhere.length ? `<p class="also"><strong>Also find it at:</strong> ${esc(elsewhere.map((s) => s.name).join(', '))}</p>` : ''}
-    <a class="sheet-link" href="#/plants/${plant.slug}">See all key plants ›</a>`;
-  sheet.showModal();
-}
-
 app.addEventListener('click', (e) => {
-  const tile = e.target.closest('[data-plant]');
-  if (tile) openPlant(tile.dataset.plant);
+  const view = e.target.closest('[data-view]');
+  if (view) setPlantView(view.dataset.view);
+  const bed = e.target.closest('.bed-link');
+  if (bed) { setPlantView('bed', bed.dataset.bed); document.querySelector('.plant-filter').scrollIntoView(); }
 });
-sheet.addEventListener('click', (e) => {
-  if (e.target === sheet || e.target.closest('.sheet-close') || e.target.closest('.sheet-link')) sheet.close();
+app.addEventListener('change', (e) => {
+  if (e.target.id === 'bed-select') setPlantView('bed', e.target.value);
 });
+// Load a plant's larger photo when it's opened by tapping.
+app.addEventListener('toggle', (e) => {
+  if (e.target.matches?.('.plant-card') && e.target.open) openPlantCard(e.target);
+}, true);
 
 // ---------- Routing ----------
 
 function route() {
-  if (sheet.open) sheet.close();
   const [, kind, slug] = location.hash.split('/');
   if (kind === 'stop') renderStop(slug);
   else if (kind === 'plants') renderPlants(slug);

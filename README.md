@@ -10,11 +10,13 @@ All the words live in the `content/` folder. You never need to touch the code to
 
 | To change… | Edit |
 | --- | --- |
-| A Stop's story, photos or plants | `content/stops/<stop>.md` |
+| A Stop's story or photos | `content/stops/<stop>.md` |
 | The order of the Stops (and their numbers) | `content/walking-order.txt` |
 | The welcome message and notes on the home page | `content/home.md` |
 | About us, Trust for Nature, Fire protection | `content/pages/<page>.md` |
-| The Plant Guide and plant pop-ups | `content/key-plants.md` |
+| The Plant Guide (every plant, its beds and photo) | `content/plant-list.csv` |
+| Garden bed names in the Plant Guide | `content/garden-beds.txt` |
+| Extra descriptions for the best-known plants | `content/key-plants.md` |
 
 Each Stop file starts with a few settings between `---` lines, then the story:
 
@@ -24,13 +26,13 @@ name: Main Garden
 map: 60, 38                               ← where the number sits on the map (% across, % down)
 now: images/stops/main-garden-now.jpg     ← the photo people see first
 before: images/stops/main-garden-before.jpg  ← revealed by the slider (leave blank for no slider)
-key_plants: Banksia, Kangaroo Paw         ← must match a "## Name" in key-plants.md
-other_plants: bottle trees, olive trees
 ---
 The story goes here. Leave a blank line between paragraphs.
 ```
 
-**To swap a photo:** put the new photo in `images/stops/` (or `images/plants/`) and update the file name in the settings. Photos about 1200px wide are plenty.
+**To swap a photo:** put the new photo in `images/stops/` and update the file name in the settings. Photos about 1200px wide are plenty.
+
+**Plant photos:** originals go in `images/plants/` and are linked from `content/plant-list.csv`. Run `_working/make-plant-photos.py` to make the small copies the site uses (in `images/plants-web/`).
 
 **Editing on github.com:** open the file, click the pencil icon, make your change, then click **Commit changes**. The live site updates within a minute or two.
 
