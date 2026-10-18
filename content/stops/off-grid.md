@@ -17,7 +17,7 @@ Eco.Abode is also smarter than the average bear. Shaun's a product designer and 
 - 24kW solar array
 - 7.4kW Selectronic inverter
 - 8.2kW solar inverter
-- 15.4kWh BYD lithium-ion battery (about to be upgraded to 45kWh)
+- 45kWh battery
 
 **Water**
 
