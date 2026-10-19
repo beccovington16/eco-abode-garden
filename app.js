@@ -103,7 +103,7 @@ const plantView = { mode: 'az', bed: null };
 async function renderPlants(focusSlug) {
   if (!garden.plantList) {
     app.innerHTML = `${topBar('Plant guide')}<p class="loading">Loading the plants…</p>`;
-    garden.plantList = await garden.loadPlantList();
+    [garden.plantList, garden.plantIntro] = await Promise.all([garden.loadPlantList(), garden.loadPage('plant-guide')]);
   }
   const { plants, beds } = garden.plantList;
   if (plantView.bed === null) plantView.bed = String(beds[0].key);
@@ -111,8 +111,8 @@ async function renderPlants(focusSlug) {
 
   app.innerHTML = `
     ${topBar('Plant guide')}
-    <h1 class="page-title">Plant guide</h1>
-    <p class="intro">Every plant in our garden, all ${plants.length} of them. Tap a plant to find out more.</p>
+    <h1 class="page-title">${esc(garden.plantIntro.data.title || 'Plant guide')}</h1>
+    <div class="intro">${md(garden.plantIntro.body.replaceAll('{count}', plants.length))}</div>
     <div class="plant-filter" role="group" aria-label="Browse plants">
       <button type="button" data-view="az" aria-pressed="${plantView.mode === 'az'}">A–Z</button>
       <button type="button" data-view="bed" aria-pressed="${plantView.mode === 'bed'}">By garden bed</button>

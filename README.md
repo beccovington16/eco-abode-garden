@@ -15,6 +15,7 @@ All the words live in the `content/` folder. You never need to touch the code to
 | The welcome message and notes on the home page | `content/home.md` |
 | About us, Trust for Nature, Fire protection | `content/pages/<page>.md` |
 | The Plant Guide (every plant, its beds and photo) | `content/plant-list.csv` |
+| The words at the top of the Plant Guide | `content/pages/plant-guide.md` |
 | Garden bed names in the Plant Guide | `content/garden-beds.txt` |
 | Extra descriptions for the best-known plants | `content/key-plants.md` |
 

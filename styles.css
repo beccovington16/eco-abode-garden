@@ -123,6 +123,7 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 
 .page-title { font-size: min(1.75rem, 11vw); margin: 4px var(--gutter) 12px; }
 .intro { margin: 0 var(--gutter) 16px; color: var(--ink-soft); }
+.intro p { margin: 0 0 10px; }
 .prose { padding: 4px var(--gutter) 0; }
 .prose img { border-radius: var(--radius); margin: 8px 0; }
 .photo { width: calc(100% - 2 * var(--gutter)); margin: 0 var(--gutter); border-radius: var(--radius); }
