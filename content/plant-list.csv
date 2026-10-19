@@ -11,7 +11,7 @@ Acacia,"Acacia, indigenous",Acacia,yes,11,images/plants/11-big-middle_IMG8139_ac
 Acacia,"Acacia, local suckering (lightwood?)",Acacia,yes,"11,13",images/plants/11-big-middle_IMG8147_acacia-local-suckering_REVISIT.jpeg,revisit
 Acacia,"Acacia, spiky indigenous",Acacia,yes,"1,4,10",images/plants/01-front-door_IMG7997_acacia-spiky-indigenous.jpeg,bec-confirmed
 Acacia,"Acacia, unknown (big tree)",Acacia,yes,12,images/plants/12-entrance_IMG8154_acacia-local-suckering_REVISIT.jpeg,revisit
-Acacia,Clay wattle,Acacia,yes,"4,8,13",,no photo
+Acacia,Clay wattle,Acacia,yes,"4,8,13",images/plants/08-cousin-it_IMG8392_clay-wattle.jpeg,bec-confirmed
 Acacia,Hairy wattle,Acacia,yes,13,images/plants/13-lexies-run_IMG8194_hairy-wattle_CHECK.jpeg,check
 Acacia,Queensland silver wattle,Acacia podalyriifolia,yes,"12,13",images/plants/12-entrance_IMG8158_queensland-silver-wattle.jpeg,matched
 Acacia,Shoestring acacia,Acacia stenophylla,yes,13,images/plants/13-lexies-run_IMG8191_shoestring-acacia_CHECK.jpeg,check
@@ -19,6 +19,7 @@ Adenanthos (woolly bush),Woolly bush,Adenanthos,yes,6,images/plants/06-tulip_IMG
 Banksia,Banksia 'Red Rover',Banksia,yes,3,images/plants/03-olive-tree-other-side_IMG8040_banksia-red-rover.jpeg,bec-confirmed
 Banksia,Banksia (variety unclear),Banksia,yes,10,images/plants/10-tiered-top_IMG8129_banksia-unknown_REVISIT.jpeg,revisit
 Banksia,Banksia ericifolia,Banksia ericifolia,yes,"10,11",images/plants/10-tiered-top_IMG8137_banksia-ericifolia.jpeg,matched
+Banksia,Banksia formosa,Banksia formosa,yes,6,images/plants/06-tulip_IMG8378_banksia-formosa.jpeg,bec-confirmed
 Banksia,Banksia marginata,Banksia marginata,yes,5,images/plants/05-silver-princess_IMG80721_banksia-marginata_CHECK.jpeg,check
 Banksia,Banksia spinulosa 'Birthday Candles',Banksia spinulosa,yes,9,images/plants/09-tiered-lower_IMG8122_banksia-birthday-candles.jpeg,matched
 Banksia,"Banksia spinulosa, dwarf",Banksia spinulosa,yes,"6,11",images/plants/11-big-middle_IMG8140_banksia-spinulosa-dwarf.jpeg,shaun-confirmed
@@ -37,7 +38,7 @@ Casuarina and Allocasuarina,"She-oak, drooping and black",Allocasuarina,yes,11,,
 Cherry ballart,Cherry ballart,Exocarpos cupressiformis,yes,"11,13",,no photo
 Climbers,Shiraz grapevine,Vitis vinifera,no,1,,no photo
 Climbers,Wisteria,Wisteria,no,1,,no photo
-Correa,Correa 'Dusky Bells',Correa,yes,"2,4",images/plants/08-cousin-it_IMG8098_eremophila-fruit-salad.jpeg,shaun-confirmed
+Correa,Correa 'Dusky Bells',Correa,yes,"2,4,6",images/plants/06-tulip_IMG8380_correa-dusky-bells.jpeg,bec-confirmed
 Correa,Correa alba,Correa alba,yes,"2,4,9,11,13",images/plants/02-fish-pond_IMG8031_correa-alba.jpeg,bec-confirmed
 Correa,Correa decumbens,Correa decumbens,yes,13,,no photo
 Correa,Correa glabra (rock correa),Correa glabra,yes,10,images/plants/04-olive-tree-entrance_IMG8046_correa-glabra.jpeg,bec-confirmed
@@ -68,7 +69,7 @@ Eremophila,Eremophila 'Pink Panther',Eremophila,yes,4,images/plants/04-olive-tre
 Eremophila,Eremophila 'Rays Blue',Eremophila,yes,9,images/plants/09-tiered-lower_IMG8106_eremophila-rays-blue.jpeg,shaun-confirmed
 Eremophila,Eremophila 'Silver Ball',Eremophila,yes,"2,10",images/plants/02-fish-pond_IMG8018_eremophila-silver-ball.jpeg,bec-confirmed
 Eremophila,Eremophila 'Summertime Blue',Eremophila,yes,2,images/plants/02-fish-pond_IMG8026_eremophila-summertime-blue.jpeg,shaun-confirmed
-Eremophila,Eremophila biserrata,Eremophila biserrata,yes,9 (4+ around the garden),images/plants/09-tiered-lower_IMG8101_eremophila-biserrata.jpeg,shaun-confirmed
+Eremophila,Eremophila biserrata,Eremophila biserrata,yes,"9 (4+ around the garden)",images/plants/09-tiered-lower_IMG8101_eremophila-biserrata.jpeg,shaun-confirmed
 Eremophila,Eremophila calorhabdos,Eremophila calorhabdos,yes,12,images/plants/12-entrance_IMG8163_eremophila-calorhabdos.jpeg,shaun-confirmed
 Eremophila,Eremophila decipiens,Eremophila decipiens,yes,"2,3",images/plants/03-olive-tree-other-side_IMG8041_eremophila-red-flowers.jpeg,bec-confirmed
 Eremophila,Eremophila glabra,Eremophila glabra,yes,"5,6,9,12,13",images/plants/10-tiered-top_IMG8136_eremophila-glabra.jpeg,shaun-confirmed
@@ -76,7 +77,7 @@ Eremophila,Eremophila glabra x decipiens,Eremophila,yes,7,images/plants/07-west-
 Eremophila,Eremophila glabra x maculata,Eremophila,yes,2,images/plants/02-fish-pond_IMG8021_eremophila-glabra-x-maculata.jpeg,bec-confirmed
 Eremophila,"Eremophila glabra, orange flowering",Eremophila glabra,yes,3,images/plants/03-olive-tree-other-side_IMG8039_eremophila-glabra-orange.jpeg,bec-confirmed
 Eremophila,Eremophila longifolia,Eremophila longifolia,yes,9,,no photo
-Eremophila,Eremophila maculata,Eremophila maculata,yes,"8,10,13",images/plants/08-cousin-it_IMG8099_eremophila-maculata.jpeg,shaun-confirmed
+Eremophila,Eremophila maculata,Eremophila maculata,yes,"8,10,13",images/plants/10-tiered-top_IMG8410_eremophila-maculata.jpeg,shaun-confirmed
 Eremophila,Eremophila oppositifolia,Eremophila oppositifolia,yes,12,images/plants/12-entrance_IMG8155_eremophila-oppositifolia.jpeg,matched
 Eremophila,"Eremophila oppositifolia, cream form",Eremophila oppositifolia,yes,4,images/plants/04-olive-tree-entrance_IMG8060_eremophila-oppositifolia-cream.jpeg,bec-confirmed
 Eremophila,Eremophila phillipsii,Eremophila phillipsii,yes,12,images/plants/12-entrance_IMG8166_eremophila-phillipsii.jpeg,matched
@@ -117,7 +118,7 @@ Hakea,Hakea vaginata,Hakea,yes,13,images/plants/13-lexies-run_IMG8183_hakea-vagi
 Hakea,"Hakea, needle bush",Hakea,yes,13,images/plants/13-lexies-run_IMG8190_hakea-needle-bush_CHECK.jpeg,check
 Hakea,"Hakea, needle-leaf tree (name forgotten)",Hakea,yes,12,images/plants/12-entrance_IMG8167_hakea-needle-leaf-tree_REVISIT.jpeg,revisit
 Hakea,"Hakea, pin cushion",Hakea laurina,yes,"4,11",images/plants/11-big-middle_IMG8143_hakea-pin-cushion.jpeg,shaun-confirmed
-Hakea,"Hakea, thin-leaf tree (tag lost)",Hakea,yes,4,images/plants/04-olive-tree-entrance_IMG8051_hakea-thin-leaf.jpeg,bec-confirmed
+Hakea,Hakea microcarpa,Hakea microcarpa,yes,4,images/plants/04-olive-tree-entrance_IMG8051_hakea-thin-leaf.jpeg,bec-confirmed
 Isopogon,Isopogon,Isopogon,yes,4,images/plants/04-olive-tree-entrance_IMG8048_isopogon.jpeg,bec-confirmed
 Kangaroo paw,"Kangaroo paw, red",Anigozanthos,yes,"1,6,9,10",images/plants/01-front-door_IMG8014_kangaroo-paw-red.jpeg,matched
 Kunzea,"Kunzea, white",Kunzea,yes,4,images/plants/04-olive-tree-entrance_IMG8064_kunzea-white.jpeg,bec-confirmed
@@ -137,12 +138,13 @@ Myoporum,Myoporum insulare (boobialla),Myoporum insulare,yes,9,images/plants/09-
 Myoporum,"Myoporum, broad leaf",Myoporum,yes,"1,3,4,6,8,9,10,11,12",,no photo
 Myoporum,"Myoporum, fine leaf, purple flowering",Myoporum parvifolium,yes,"1,2,13,14",images/plants/01-front-door_IMG8005_myoporum-fine-leaf-purple.jpeg,bec-confirmed
 Myoporum,"Myoporum, thin leaf",Myoporum,yes,"10,12,13,14",images/plants/10-tiered-top_IMG8124_myoporum-thin-leaf.jpeg,matched
-Native frangipani,Native frangipani,Hymenosporum flavum,yes,14,images/plants/14-rock-garden_IMG8201_native-frangipani.jpeg,matched
+Native frangipani,Native frangipani,Hymenosporum flavum,yes,"8,14",images/plants/08-cousin-it_IMG8387_native-frangipani.jpeg,matched
 Native hibiscus,Native hibiscus,Alyogyne huegelii,yes,"3,9,10",images/plants/03-olive-tree-other-side_IMG8036_native-hibiscus-alyogyne.jpeg,confirmed
 Other,'Cupid's Dream',,?,10,images/plants/10-tiered-top_IMG8134_cupids-dream.jpeg,matched
 Other,Elephant ears,,no,"1,3",images/plants/01-front-door_IMG8002_elephant-ears.jpeg,matched
 Other,Exotic conifer,,no,"11,13",images/plants/13-lexies-run_IMG8177_conifer-exotic.jpeg,shaun-confirmed
 Other,Nodding lily,,?,"1,5,10",images/plants/01-front-door_IMG8003_nodding-lily.jpeg,bec-confirmed
+Other,Podocarpus elongatus,Podocarpus elongatus,no,6,images/plants/06-tulip_IMG8376_podocarpus-elongatus.jpeg,bec-confirmed
 Other,Ponytail plant,Beaucarnea recurvata,no,1,images/plants/01-front-door_IMG8015_ponytail-plant.jpeg,matched
 Other,Red hot pokers,Kniphofia,no,14,images/plants/14-rock-garden_IMG8209_red-hot-pokers.jpeg,matched
 Other,Sarcococca (sweet box),Sarcococca,no,13,images/plants/13-lexies-run_IMG8174_sarcococca-sweet-box.jpeg,bec-confirmed
