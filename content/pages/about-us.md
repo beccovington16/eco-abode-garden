@@ -4,9 +4,9 @@ photo: images/pages/shaun-bec-lexie.jpg
 ---
 We're Shaun, Bec and Lexie the kelpie.
 
-Eco.Abode entered our life in 2021. Fate (and a pandemic) propelled us toward our retirement dream: an off-grid bush paradise.
+Eco.Abode entered our life in 2021. Fate (and a pandemic) propelled us toward what we thought was a retirement dream: living on an off-grid bush paradise.
 
-The garden is our escape from the daily grind. It's also soaked up a huge amount of our time, especially Shaun's. After visiting gardens in the 2022 Festival of Gardens, Shaun set an ambitious goal to take part.
+We both have full-time desk jobs, so the garden is our escape from the daily grind. It's also soaked up a huge amount of our time, especially Shaun's. After visiting gardens in the 2022 Festival of Gardens, Shaun set an ambitious goal to take part.
 
 This is actually the garden's second life in the public eye. Back in 2000 it was featured in Australian Country Style magazine as a beautiful cottage garden, lovingly developed over many years by the previous owner, who still pops back to visit quite often.
 

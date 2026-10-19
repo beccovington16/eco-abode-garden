@@ -9,3 +9,5 @@ accessible_note: Make your way down the drive into the Main Garden. From under t
 We're Shaun, Bec and Lexie the kelpie, and we're so happy you're here.
 
 Tap a number on the map, or scan the sign at each stop, to read about that part of the garden.
+
+You'll find Shaun wandering the garden, and he's always happy to help answer any questions, too.
