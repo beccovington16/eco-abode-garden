@@ -1,0 +1,79 @@
+group,name,scientific,evidence,birdnet,status,photo,credit,source
+Mammals,Antechinus,Antechinus sp.,observed,,,images/wildlife/antechinus,"Mel Williams from Melbourne, Australia, CC BY 2.0","https://commons.wikimedia.org/wiki/File:Agile_Antechinus_(Antechinus_agilis)_on_cloth,_close-up_from_front.jpg"
+Mammals,Brush-tailed Phascogale,Phascogale tapoatafa,trust for nature,,Vulnerable (Vic),images/wildlife/brush-tailed-phascogale,"Suavejones79, CC0",https://commons.wikimedia.org/wiki/File:Brush-tailed_phascogale.jpg
+Mammals,Eastern Grey Kangaroo,Macropus giganteus,observed,,,images/wildlife/eastern-grey-kangaroo,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Macropus_giganteus_-_Brunkerville.jpg
+Mammals,Koala,Phascolarctos cinereus,observed,,,images/wildlife/koala,"Diliff, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Koala_climbing_tree.jpg
+Mammals,Krefft's Glider (Sugar Glider),Petaurus breviceps,trust for nature,,,images/wildlife/kreffts-glider-sugar-glider,"Joseph C Boone, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Sugar_Glider_JCB.jpg
+Mammals,Short-beaked Echidna,Tachyglossus aculeatus,trust for nature,,,images/wildlife/short-beaked-echidna,"User:Fir0002, GFDL 1.2",https://commons.wikimedia.org/wiki/File:Wild_shortbeak_echidna.jpg
+Mammals,Swamp Wallaby,Wallabia bicolor,observed,,,images/wildlife/swamp-wallaby,"Toby Hudson, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Wallabia_bicolor_Jenolan_Caves.jpg
+Birds,Australian Magpie,Gymnorhina tibicen,birdnet,100,,images/wildlife/australian-magpie,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Cracticus_tibicen_hypoleuca_male_domain.jpg
+Birds,Australian Owlet-nightjar,Aegotheles cristatus,observed,,,images/wildlife/australian-owlet-nightjar,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Australian_owlet-nightjar_A22I9928.jpg
+Birds,Australian Raven,Corvus coronoides,birdnet,100,,images/wildlife/australian-raven,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Corvus_coronoides_-_Doughboy_Head.jpg
+Birds,Australian Wood Duck,Chenonetta jubata,observed,,,images/wildlife/australian-wood-duck,"fir0002, GFDL 1.2",https://commons.wikimedia.org/wiki/File:Australian_wood_duck_-_male.jpg
+Birds,Barking Owl,Ninox connivens,trust for nature,,,images/wildlife/barking-owl,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Barking_Owl_0A2A6293.jpg
+Birds,Barn Owl,Tyto alba,birdnet,95,,images/wildlife/barn-owl,"Steven Ward, CC BY 2.0","https://commons.wikimedia.org/wiki/File:Barn_Owl,_Lancashire.jpg"
+Birds,Black-faced Cuckooshrike,Coracina novaehollandiae,observed,,,images/wildlife/black-faced-cuckooshrike,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Coracina_novaehollandiae.jpg
+Birds,Black Kite,Milvus migrans,birdnet,93,,images/wildlife/black-kite,"Andreas Trepte, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Schwarzmilan.jpg
+Birds,Brown Thornbill,Acanthiza pusilla,birdnet,98,,images/wildlife/brown-thornbill,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Acanthiza_pusilla_-_Risdon_Brook.jpg
+Birds,Brown Treecreeper,Climacteris picumnus,observed,,,images/wildlife/brown-treecreeper,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Brown_Treecreeper_6137.jpg
+Birds,Buff-rumped Thornbill,Acanthiza reguloides,birdnet,93,,images/wildlife/buff-rumped-thornbill,"David Sinnott, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Acanthiza_reguloides.jpg
+Birds,Common Blackbird,Turdus merula,birdnet,100,Introduced,images/wildlife/common-blackbird,"Andreas Trepte, CC BY-SA 2.5",https://commons.wikimedia.org/wiki/File:Common_Blackbird.jpg
+Birds,Common Bronzewing,Phaps chalcoptera,observed,,,images/wildlife/common-bronzewing,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Common_Bronzewing_male_-_Patchewollock.jpg
+Birds,Crimson Rosella,Platycercus elegans,observed,,,images/wildlife/crimson-rosella,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Platycercus_elegans_Wilsons_Prom.jpg
+Birds,Eastern Rosella,Platycercus eximius,birdnet,97,,images/wildlife/eastern-rosella,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Platycercus_eximius_diemenensis_male.jpg
+Birds,Eastern Spinebill,Acanthorhynchus tenuirostris,observed,,,images/wildlife/eastern-spinebill,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg
+Birds,Eastern Yellow Robin,Eopsaltria australis,birdnet,100,,images/wildlife/eastern-yellow-robin,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Eopsaltria_australis_-_Mogo_Campground.jpg
+Birds,European Greenfinch,Chloris chloris,birdnet,100,Introduced,images/wildlife/european-greenfinch,"Martin Kunz, CC BY 4.0",https://commons.wikimedia.org/wiki/File:Chloris_chloris_(profile).jpg
+Birds,Fan-tailed Cuckoo,Cacomantis flabelliformis,observed,,,images/wildlife/fan-tailed-cuckoo,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Cacomantis_flabelliformis.jpg
+Birds,Galah,Eolophus roseicapilla,observed,,,images/wildlife/galah,"Charles J. Sharp, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Galah_(Eolophus_roseicapilla_albiceps)_male_Adelaide.jpg
+Birds,Gang-gang Cockatoo,Callocephalon fimbriatum,birdnet,99,Endangered (Vic),images/wildlife/gang-gang-cockatoo,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Callocephalon_fimbriatum_male_-_Callum_Brae.jpg
+Birds,Golden Whistler,Pachycephala pectoralis,birdnet,98,,images/wildlife/golden-whistler,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Pachycephala_pectoralis_youngi_2.jpg
+Birds,Grey Fantail,Rhipidura albiscapa,birdnet,95,,images/wildlife/grey-fantail,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Grey_Fantail_-_Brunkerville.jpg
+Birds,Grey Shrike-thrush,Colluricincla harmonica,observed,,,images/wildlife/grey-shrike-thrush,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Colluricincla_harmonica_-_Brunkerville.jpg
+Birds,Laughing Kookaburra,Dacelo novaeguineae,birdnet,100,,images/wildlife/laughing-kookaburra,"Photo by: Paulweberphoto - paulweberphoto.com, CC BY 4.0",https://commons.wikimedia.org/wiki/File:Laughing_Kookaburra_1.jpg
+Birds,Little Corella,Cacatua sanguinea,birdnet,99,,images/wildlife/little-corella,"Photo by: Paulweberphoto - paulweberphoto.com, CC BY 4.0",https://commons.wikimedia.org/wiki/File:Little_Corella_1.jpg
+Birds,Little Raven,Corvus mellori,birdnet,100,,images/wildlife/little-raven,"Toby Hudson, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Corvus_mellori.jpg
+Birds,Long-billed Corella,Cacatua tenuirostris,observed,,,images/wildlife/long-billed-corella,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Long-billed_Corella.jpg
+Birds,Magpie-lark,Grallina cyanoleuca,birdnet,100,,images/wildlife/magpie-lark,"Charles J. Sharp, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Magpie-lark_(Grallina_cyanoleuca_cyanoleuca)_male_Adelaide.jpg
+Birds,Masked Lapwing,Vanellus miles,birdnet,100,,images/wildlife/masked-lapwing,"Charles J. Sharp, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Masked_lapwing_(Vanellus_miles_miles)_Darwin.jpg
+Birds,Masked Owl,Tyto novaehollandiae,trust for nature,,,images/wildlife/masked-owl,"Benjamint444, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Masked_owl_head4443.jpg
+Birds,New Holland Honeyeater,Phylidonyris novaehollandiae,observed,,,images/wildlife/new-holland-honeyeater,"Photo by: Paulweberphoto - paulweberphoto.com, CC BY 4.0",https://commons.wikimedia.org/wiki/File:New_Holland_honeyeater_().jpg
+Birds,Noisy Friarbird,Philemon corniculatus,birdnet,92,,images/wildlife/noisy-friarbird,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Philemon_corniculatus_-_Glen_Davis.jpg
+Birds,Olive-backed Oriole,Oriolus sagittatus,birdnet,100,,images/wildlife/olive-backed-oriole,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Olive-backed_Oriole_-_Crossroads_Reserve.jpg
+Birds,Peaceful Dove,Geopelia placida,birdnet,93,,images/wildlife/peaceful-dove,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Geopelia_placida_-_Glen_Davis.jpg
+Birds,Peregrine Falcon,Falco peregrinus,birdnet,92,,images/wildlife/peregrine-falcon,"Mykola Swarnyk, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Falco_peregrinus_m_Humber_Bay_Park_Toronto.jpg
+Birds,Pied Currawong,Strepera graculina,observed,,,images/wildlife/pied-currawong,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Pied_Currawong_-_Newington.jpg
+Birds,Red-browed Finch,Neochmia temporalis,observed,,,images/wildlife/red-browed-finch,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Red-browed_Finch_-_Penrith.jpg
+Birds,Red Wattlebird,Anthochaera carunculata,birdnet,97,,images/wildlife/red-wattlebird,"Andreas Trepte, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Red_wattlebird.jpg
+Birds,Rock Dove (Feral Pigeon),Columba livia,birdnet,100,Introduced,images/wildlife/rock-dove-feral-pigeon,"william_stephens, CC BY 4.0","https://commons.wikimedia.org/wiki/File:Columba_livia_(Rock_Dove,_wild),_Duncansby_Head,_Caithness,_Scotland_1.jpg"
+Birds,Rufous Whistler,Pachycephala rufiventris,birdnet,100,,images/wildlife/rufous-whistler,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Pachycephala_rufiventris_male_1_-_Glen_Davis.jpg
+Birds,Scarlet Robin,Petroica boodang,trust for nature,,,images/wildlife/scarlet-robin,"Summerdrought, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Scarlet_Robin_0401.jpg
+Birds,Shining Bronze-Cuckoo,Chrysococcyx lucidus,birdnet,100,,images/wildlife/shining-bronze-cuckoo,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Shining_Bronze_Cuckoo_0772.jpg
+Birds,Silvereye,Zosterops lateralis,birdnet,100,,images/wildlife/silvereye,"fir0002, GFDL 1.2",https://commons.wikimedia.org/wiki/File:Silvereye_Jan_2010.jpg
+Birds,Southern Boobook,Ninox boobook,birdnet,100,,images/wildlife/southern-boobook,"Brisbane City Council, CC BY 2.0",https://commons.wikimedia.org/wiki/File:Boobook_Owl_(8025632307).jpg
+Birds,Spotted Pardalote,Pardalotus punctatus,birdnet,100,,images/wildlife/spotted-pardalote,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Pardalotus_punctatus_2_-_Glen_Davis.jpg
+Birds,Striated Pardalote,Pardalotus striatus,observed,,,images/wildlife/striated-pardalote,"Fir0002, GFDL 1.2",https://commons.wikimedia.org/wiki/File:Pardalotus_with_nesting_material.jpg
+Birds,Sulphur-crested Cockatoo,Cacatua galerita,observed,,,images/wildlife/sulphur-crested-cockatoo,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Cacatua_galerita_Tas_2.jpg
+Birds,Superb Fairy-wren,Malurus cyaneus,observed,,,images/wildlife/superb-fairy-wren,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Malurus_cyaneus_cyanochlamys_.jpg
+Birds,Tawny Frogmouth,Podargus strigoides,observed,,,images/wildlife/tawny-frogmouth,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Tawny_Frogmouth_-_Sydney_Olympic_Park.jpg
+Birds,Weebill,Smicrornis brevirostris,birdnet,100,,images/wildlife/weebill,"Patrick_K59, CC BY 2.0",https://commons.wikimedia.org/wiki/File:Weebill_Smicrornis_brevirostris)_12_September_2015_Cropped.jpg
+Birds,White-eared Honeyeater,Nesoptilotis leucotis,birdnet,99,,images/wildlife/white-eared-honeyeater,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:White-eared_Honeyeater_-_Blackheath.jpg
+Birds,White-faced Honeyeater,Ptilotula penicillata,observed,,,images/wildlife/white-faced-honeyeater,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Ptilotula_penicillata_-_Glen_Davis.jpg
+Birds,White-throated Needletail,Hirundapus caudacutus,trust for nature,,Vulnerable (Vic),images/wildlife/white-throated-needletail,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:White-throated_Needletail_0A2A6919.jpg
+Birds,White-throated Treecreeper,Cormobates leucophaea,birdnet,100,,images/wildlife/white-throated-treecreeper,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Cormobates_leucophaea_1_-_Castlereigh_Nature_Reserve.jpg
+Birds,White-winged Chough,Corcorax melanorhamphos,observed,,,images/wildlife/white-winged-chough,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Corcorax_melanorhamphos_-_Pinegrove_Memorial_Parkt.jpg
+Birds,Wedge-tailed Eagle,Aquila audax,observed,,,images/wildlife/wedge-tailed-eagle,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Aquila_audax_-_Captain%27s_Flat.jpg
+Birds,Yellow-faced Honeyeater,Caligavis chrysops,birdnet,100,,images/wildlife/yellow-faced-honeyeater,"JJ Harrison, CC BY-SA 4.0",https://commons.wikimedia.org/wiki/File:Caligavis_chrysops_-_Lake_Parramatta_Reserve.jpg
+Birds,Yellow-rumped Thornbill,Acanthiza chrysorrhoa,birdnet,89,,images/wildlife/yellow-rumped-thornbill,"sunphlo from South Australia, CC BY-SA 2.0",https://commons.wikimedia.org/wiki/File:Acanthiza_chrysorrhoa_-_Yellow-rumped_Thornbill.jpg
+Birds,Yellow-tailed Black-Cockatoo,Calyptorhynchus funereus,observed (fly-over),,,images/wildlife/yellow-tailed-black-cockatoo,"David Cook Wildlife Photography, CC BY-SA 2.0",https://commons.wikimedia.org/wiki/File:Calyptorhynchus_funereus_(male)_-Wamboin-8.jpg
+Reptiles,Eastern Bearded Dragon,Pogona barbata,observed,,,images/wildlife/eastern-bearded-dragon,"JJ Harrison, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Eastern_bearded_dragon_9542.jpg
+Reptiles,Eastern Blue-tongued Lizard,Tiliqua scincoides,observed,,,images/wildlife/eastern-blue-tongued-lizard,"Doug Beckers, CC BY-SA 2.0",https://commons.wikimedia.org/wiki/File:Tiliqua_scincoides_tongue.jpg
+Reptiles,Eastern Brown Snake,Pseudonaja textilis,observed,,,images/wildlife/eastern-brown-snake,"Poyt448 Peter Woodard, Public domain",https://commons.wikimedia.org/wiki/File:Eastern_Brown_Snake_-_Kempsey_NSW.jpg
+Reptiles,Eastern Long-necked Turtle,Chelodina longicollis,observed,,,images/wildlife/eastern-long-necked-turtle,"John Wombey, CSIRO, CC BY 3.0",https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_7775_Eastern_Snakenecked_Turtle.jpg
+Reptiles,Jacky Dragon,Amphibolurus muricatus,observed,,,images/wildlife/jacky-dragon,"Benjamint444, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Tree_Dragon444.jpg
+Reptiles,Marbled Gecko,Christinus marmoratus,trust for nature,,,images/wildlife/marbled-gecko,"own work, GFDL 1.2",https://commons.wikimedia.org/wiki/File:Marbled_Gecko.jpg
+Reptiles,Red-bellied Black Snake,Pseudechis porphyriacus,observed,,,images/wildlife/red-bellied-black-snake,"Donald Hobern from Copenhagen, Denmark, CC BY 2.0",https://commons.wikimedia.org/wiki/File:Pseudechis_porphyriacus_(35307320466).jpg
+Reptiles,Shingleback (Stumpy-tail),Tiliqua rugosa,observed,,,images/wildlife/shingleback-stumpy-tail,"Benjamint444, GFDL 1.2",https://commons.wikimedia.org/wiki/File:Shingleback-sa.jpg
+Reptiles,Tiger Snake,Notechis scutatus,observed,,,images/wildlife/tiger-snake,"Max Tibby, CC0",https://commons.wikimedia.org/wiki/File:Notechis_scutatus_260523890.jpg
+Frogs,Peron's Tree Frog,Litoria peronii,observed,,,images/wildlife/perons-tree-frog,"LiquidGhoul, CC BY-SA 3.0",https://commons.wikimedia.org/wiki/File:Peron%27s_Tree_Frog_-_Litoria_peronii.jpg
+Invertebrates,Eltham Copper Butterfly,Paralucia pyrodiscus lucida,potential habitat,,Endangered (Vic),images/wildlife/eltham-copper-butterfly,"Max Campbell, CC BY 4.0",https://commons.wikimedia.org/wiki/File:Paralucia_pyrodiscus_107107113.jpg

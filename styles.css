@@ -236,6 +236,20 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 .plant-letter:first-child { margin-top: 0; }
 .tag-exotic { display: inline-block; font-size: .78rem; font-weight: 600; color: #7a4a12; background: #f6e7cf; padding: 2px 9px; border-radius: 10px; }
 
+/* Wildlife page */
+.jump-to { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 var(--gutter) 6px; }
+.jump-to button {
+  min-height: 2.5rem; padding: 0 14px; border: 2px solid var(--green-soft); border-radius: 20px;
+  background: var(--card); color: var(--green-dark); font: 600 .9rem/1 var(--body); cursor: pointer;
+}
+.wildlife-group { scroll-margin-top: 12px; }
+.wildlife-group span { font: 400 .85rem var(--body); color: var(--ink-soft); }
+.tag-threatened { display: inline-block; font-size: .78rem; font-weight: 600; color: #8a1f1f; background: #f8dede; padding: 2px 9px; border-radius: 10px; }
+.credit { font-size: .75rem; color: var(--ink-soft); }
+/* Show the whole wildlife photo when opened, so nothing gets cropped off. */
+.plant-photo-large.whole { aspect-ratio: auto; height: auto; max-height: 75vh; object-fit: contain; background: var(--sand-deep); }
+.credit a { color: inherit; }
+
 .botanical { font-style: italic; color: var(--ink-soft); font-size: .82rem; margin: 2px 0 0; }
 
 /* ---------- Tablets ---------- */

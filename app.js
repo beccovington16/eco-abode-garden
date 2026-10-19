@@ -2,6 +2,7 @@
 //   #/                    home (map and links)
 //   #/stop/main-garden    a Stop
 //   #/plants              the Plant Guide
+//   #/wildlife            the animals recorded on the property
 //   #/page/about-us       a Feature or other page from content/pages
 
 const app = document.getElementById('app');
@@ -10,6 +11,7 @@ let garden;
 const FEATURE_LINKS = [
   ['#/page/about-us', 'About us'],
   ['#/plants', 'Plant guide'],
+  ['#/wildlife', 'Wildlife'],
   ['#/page/trust-for-nature', 'Trust for Nature'],
   ['#/page/fire-protection', 'Fire protection'],
 ];
@@ -185,6 +187,57 @@ function setPlantView(mode, bed) {
   drawPlantList();
 }
 
+const EVIDENCE = {
+  'observed': 'Seen here',
+  'observed (fly-over)': 'Seen here, flying over',
+  'trust for nature': 'Recorded in our Trust for Nature plan',
+  'birdnet': 'Heard here, identified by BirdNET',
+  'potential habitat': 'Suitable habitat here, but not yet recorded',
+};
+
+async function renderWildlife() {
+  if (!garden.wildlife) {
+    app.innerHTML = `${topBar('Wildlife')}<p class="loading">Loading the wildlife…</p>`;
+    [garden.wildlife, garden.wildlifeIntro] = await Promise.all([garden.loadWildlife(), garden.loadPage('wildlife')]);
+  }
+  const { groups, count } = garden.wildlife;
+  const { data, body } = garden.wildlifeIntro;
+
+  const card = (a) => {
+    const how = (EVIDENCE[a.evidence] || a.evidence) + (a.birdnet ? ` (${a.birdnet}% confidence)` : '');
+    const status = a.status
+      ? `<p class="${/introduced/i.test(a.status) ? 'tag-exotic' : 'tag-threatened'}">${esc(a.status)}</p>` : '';
+    return `
+      <details class="plant-card" id="animal-${a.slug}" name="wildlife">
+        <summary>
+          ${a.thumb
+            ? `<img class="plant-photo" src="${esc(a.thumb)}" alt="" loading="lazy">`
+            : `<span class="plant-photo tile-placeholder" aria-hidden="true">${esc(a.name[0])}</span>`}
+          <h3>${esc(a.name)}</h3>
+          <span class="chev" aria-hidden="true">›</span>
+        </summary>
+        <div class="plant-text">
+          ${a.photo ? `<img class="plant-photo-large whole" data-src="${esc(a.photo)}" alt="${esc(a.name)}">` : ''}
+          ${a.scientific ? `<p class="botanical">${esc(a.scientific)}</p>` : ''}
+          ${status}
+          <p>${esc(how)}</p>
+          ${a.credit ? `<p class="credit">Photo: ${a.source ? `<a href="${esc(a.source)}" target="_blank" rel="noopener">${esc(a.credit)}</a>` : esc(a.credit)}, via Wikimedia Commons</p>` : ''}
+        </div>
+      </details>`;
+  };
+
+  app.innerHTML = `
+    ${topBar('Wildlife')}
+    <h1 class="page-title">${esc(data.title || 'Wildlife')}</h1>
+    <div class="intro">${md(body.replaceAll('{count}', count))}</div>
+    <nav class="jump-to" aria-label="Jump to a group">
+      ${groups.map((g) => `<button type="button" data-jump="group-${g.slug}">${esc(g.name)}</button>`).join('')}
+    </nav>
+    ${groups.map((g) => `
+      <h2 class="plant-letter wildlife-group" id="group-${g.slug}">${esc(g.name)} <span>${g.animals.length}</span></h2>
+      <div class="plant-guide">${g.animals.map(card).join('')}</div>`).join('')}`;
+}
+
 async function renderPage(slug) {
   let page;
   try { page = await garden.loadPage(slug); } catch { return renderNotFound(); }
@@ -240,6 +293,8 @@ function setUpCompare(el) {
 // ---------- Plant pop-up ----------
 
 app.addEventListener('click', (e) => {
+  const jump = e.target.closest('[data-jump]');
+  if (jump) document.getElementById(jump.dataset.jump)?.scrollIntoView({ behavior: 'smooth' });
   const view = e.target.closest('[data-view]');
   if (view) setPlantView(view.dataset.view);
 });
@@ -257,6 +312,7 @@ function route() {
   const [, kind, slug] = location.hash.split('/');
   if (kind === 'stop') renderStop(slug);
   else if (kind === 'plants') renderPlants(slug);
+  else if (kind === 'wildlife') renderWildlife();
   else if (kind === 'page') renderPage(slug);
   else renderHome();
   if (kind !== 'plants' || !slug) window.scrollTo(0, 0);

@@ -145,6 +145,29 @@ async function loadPlantList() {
   return { plants, beds, sortKey };
 }
 
+// The animals recorded on the property, from content/wildlife.csv, in the csv's group order.
+async function loadWildlife() {
+  const rows = parseCsv(await readText('content/wildlife.csv')).filter((r) => r.name);
+  const groups = [];
+  for (const r of rows) {
+    let group = groups.find((g) => g.name === r.group);
+    if (!group) groups.push(group = { name: r.group, slug: slugify(r.group), animals: [] });
+    group.animals.push({
+      slug: slugify(r.name),
+      name: r.name,
+      scientific: r.scientific,
+      evidence: r.evidence.toLowerCase(),
+      birdnet: r.birdnet,
+      status: r.status,
+      thumb: r.photo ? `${r.photo}-sm.jpg` : '',
+      photo: r.photo ? `${r.photo}-lg.jpg` : '',
+      credit: r.credit,
+      source: r.source,
+    });
+  }
+  return { groups, count: rows.length };
+}
+
 async function loadGarden() {
   const order = withoutComments(await readText('content/walking-order.txt'))
     .split('\n').map((s) => s.trim()).filter(Boolean);
@@ -168,5 +191,6 @@ async function loadGarden() {
     findPlant: (name) => plantByName.get(name.toLowerCase()),
     loadPage: async (slug) => parseFrontMatter(await readText(`content/pages/${slug}.md`)),
     loadPlantList,
+    loadWildlife,
   };
 }
