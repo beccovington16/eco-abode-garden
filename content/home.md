@@ -1,7 +1,7 @@
 ---
 event: Castlemaine Festival of Gardens 2026
-photo: images/pages/shaun-bec-lexie.jpg
-photo_alt: Shaun, Bec and Lexie the kelpie on the verandah
+photo: images/pages/bec-and-shaun.jpg
+photo_alt: Bec, Shaun and Lexie the kelpie in the garden
 route_note: Start at 1 and follow the numbers clockwise around the garden.
 instagram: eco.abode
 accessible_note: Make your way down the drive into the Main Garden. From under the verandah you can see almost everything.

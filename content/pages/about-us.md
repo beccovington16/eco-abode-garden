@@ -1,6 +1,7 @@
 ---
 title: About us
-photo: images/pages/shaun-bec-lexie.jpg
+photo: images/pages/bec-and-shaun.jpg
+photo_alt: Bec, Shaun and Lexie the kelpie in the garden
 ---
 We're Shaun, Bec and Lexie the kelpie.
 
