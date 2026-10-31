@@ -11,9 +11,9 @@ let garden;
 const FEATURE_LINKS = [
   ['#/page/about-us', 'About us'],
   ['#/plants', 'Plant guide'],
+  ['#/page/fire-protection', 'Fire protection'],
   ['#/wildlife', 'Wildlife'],
   ['#/page/trust-for-nature', 'Trust for Nature'],
-  ['#/page/fire-protection', 'Fire protection'],
 ];
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -105,7 +105,11 @@ const plantView = { mode: 'az', bed: null };
 async function renderPlants(focusSlug) {
   if (!garden.plantList) {
     app.innerHTML = `${topBar('Plant guide')}<p class="loading">Loading the plants…</p>`;
-    [garden.plantList, garden.plantIntro] = await Promise.all([garden.loadPlantList(), garden.loadPage('plant-guide')]);
+    [garden.plantList, garden.plantIntro, garden.sandMulch] = await Promise.all([
+      garden.loadPlantList(),
+      garden.loadPage('plant-guide'),
+      garden.loadPage('sand-mulch').catch(() => null), // optional
+    ]);
   }
   const { plants, beds } = garden.plantList;
   if (plantView.bed === null) plantView.bed = String(beds[0].key);
@@ -115,6 +119,11 @@ async function renderPlants(focusSlug) {
     ${topBar('Plant guide')}
     <h1 class="page-title">${esc(garden.plantIntro.data.title || 'Plant guide')}</h1>
     <div class="intro">${md(garden.plantIntro.body.replaceAll('{count}', plants.length))}</div>
+    ${garden.sandMulch ? `
+      <details class="faq">
+        <summary><span class="faq-icon" aria-hidden="true">?</span>${esc(garden.sandMulch.data.title || 'Why sand mulch?')}<span class="chev" aria-hidden="true">›</span></summary>
+        <div class="faq-body">${md(garden.sandMulch.body)}</div>
+      </details>` : ''}
     <div class="plant-filter" role="group" aria-label="Browse plants">
       <button type="button" data-view="popular" aria-pressed="${plantView.mode === 'popular'}">Most popular</button>
       <button type="button" data-view="az" aria-pressed="${plantView.mode === 'az'}">A–Z</button>
