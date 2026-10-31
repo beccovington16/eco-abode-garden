@@ -1,0 +1,14 @@
+# The plants shown under "Most popular" in the Plant Guide (shown A–Z).
+# One per line, spelled exactly as in the "plant" column of plant-list.csv.
+Clay wattle
+Darwinia meeboldii (grafted)
+Eremophila oppositifolia
+Everlasting clusters
+Hardenbergia
+Isopogon
+Lebanese crab apple
+Melaleuca wilsonii (violet honey myrtle)
+Native frangipani
+Turquoise ixia
+Veronica, white flowering
+White cedar

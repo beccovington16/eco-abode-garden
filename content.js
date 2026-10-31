@@ -100,9 +100,10 @@ const plantPhoto = (original, size) => {
 
 // Every plant in the garden, once each, from the plant audit's master list.
 async function loadPlantList() {
-  const [csv, bedsText] = await Promise.all([
+  const [csv, bedsText, popularText] = await Promise.all([
     readText('content/plant-list.csv'),
     readText('content/garden-beds.txt'),
+    readText('content/popular-plants.txt'),
   ]);
   // A bed as visitors see it: numbered like the map, made up of one or more audit beds.
   const beds = withoutComments(bedsText).split('\n')
@@ -142,7 +143,10 @@ async function loadPlantList() {
   plants.sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
   // Map beds in map order, then any beds that aren't on the map.
   beds.sort((a, b) => (a.number ?? Infinity) - (b.number ?? Infinity));
-  return { plants, beds, sortKey };
+  // The "Most popular" list from popular-plants.txt (plants is already A–Z, so this keeps that order).
+  const popularNames = new Set(withoutComments(popularText).split('\n').map((s) => s.trim().toLowerCase()).filter(Boolean));
+  const popular = plants.filter((p) => popularNames.has(p.name.toLowerCase()));
+  return { plants, beds, popular, sortKey };
 }
 
 // The animals recorded on the property, from content/wildlife.csv, in the csv's group order.

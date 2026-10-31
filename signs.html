@@ -3,34 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Garden Signs</title>
+  <title>Garden Sign</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* One A5 sign per page. Print from the live site so the QR codes point at the real address. */
-    @page { size: A5 portrait; margin: 0; }
+    /* The A4 welcome sign for the gate. Its QR code always points at the live site. */
+    @page { size: A4 portrait; margin: 0; }
     * { box-sizing: border-box; }
     body { margin: 0; background: #ddd; color: #2b2118; font-family: 'Open Sans', system-ui, sans-serif; }
-    .controls { max-width: 148mm; margin: 16px auto; font-size: 15px; line-height: 1.5; }
+    .controls { max-width: 210mm; margin: 16px auto; padding: 0 12px; font-size: 15px; line-height: 1.5; }
     .controls button { font: 600 15px 'Open Sans', sans-serif; padding: 10px 18px; border: 0; border-radius: 10px; background: #3b5e2b; color: #fff; cursor: pointer; }
-    .warning { background: #fff3cd; color: #6b4e00; padding: 10px 14px; border-radius: 10px; margin-bottom: 10px; }
     .sign {
-      width: 148mm; height: 210mm; margin: 0 auto 16px; padding: 14mm 14mm 12mm;
+      width: 210mm; height: 297mm; margin: 0 auto 16px; padding: 22mm 20mm 16mm;
       background: #faf6ee; display: flex; flex-direction: column; align-items: center; text-align: center;
-      page-break-after: always; break-after: page;
     }
-    .brand { font: 500 13pt 'Poppins', sans-serif; color: #3b5e2b; letter-spacing: .5px; }
-    .number {
-      margin-top: 8mm; width: 30mm; height: 30mm; border-radius: 50%;
-      display: grid; place-items: center; background: #3b5e2b; color: #faf6ee;
-      font: 600 40pt/1 'Poppins', sans-serif;
-    }
-    .name { font: 600 26pt/1.15 'Poppins', sans-serif; margin: 6mm 0 0; }
-    .qr { width: 70mm; margin-top: auto; padding: 4mm; background: #fff; border-radius: 4mm; }
+    .brand { font: 600 46pt/1 'Poppins', sans-serif; color: #3b5e2b; letter-spacing: .5px; }
+    .name { font: 600 30pt/1.15 'Poppins', sans-serif; margin: 10mm 0 0; }
+    .scan { margin: auto 0; display: flex; flex-direction: column; align-items: center; }
+    .qr { width: 125mm; padding: 6mm; background: #fff; border-radius: 6mm; }
     .qr svg { display: block; width: 100%; height: auto; }
-    .cta { font: 600 14pt 'Open Sans', sans-serif; margin: 5mm 0 0; color: #2f4a22; }
-    .small { font-size: 9pt; color: #5c5245; margin-top: 2mm; word-break: break-all; }
+    .cta { font: 600 18pt 'Open Sans', sans-serif; margin: 7mm 0 0; color: #2f4a22; }
+    .small { font-size: 10pt; color: #5c5245; margin-top: 3mm; word-break: break-all; }
     @media print {
       body { background: none; }
       .controls { display: none; }
@@ -40,50 +34,32 @@
 </head>
 <body>
   <div class="controls">
-    <div class="warning" id="warning" hidden>
-      You're viewing this on your own computer, so these QR codes point at <b>localhost</b> and won't work on visitors' phones.
-      Open this page on the live website before printing.
-    </div>
-    <p>One A5 sign per stop, plus one for the gate. In the print dialog choose <b>A5</b> paper and turn off headers and footers.</p>
-    <button onclick="window.print()">Print signs</button>
+    <p>The welcome sign for the gate. In the print dialog choose <b>A4</b> paper and turn off headers and footers.</p>
+    <button onclick="window.print()">Print sign</button>
   </div>
-  <div id="signs"></div>
+
+  <section class="sign">
+    <div class="brand">Eco.Abode</div>
+    <h1 class="name">Welcome to our garden</h1>
+    <div class="scan">
+      <div class="qr" id="qr"></div>
+      <p class="cta">Scan for the map and garden guide</p>
+      <p class="small" id="url"></p>
+    </div>
+  </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
-  <script src="content.js"></script>
   <script>
-    const base = location.href.split('#')[0].split('?')[0].replace(/signs\.html$/, '');
-    if (['localhost', '127.0.0.1'].includes(location.hostname)) document.getElementById('warning').hidden = false;
+    // The QR code always opens the live site, wherever this page is opened or printed from.
+    // Change this if the site moves to a new address (e.g. your own domain).
+    const LIVE_SITE = 'https://beccovington16.github.io/eco-abode-garden/';
+    const base = new URLSearchParams(location.search).get('url') || LIVE_SITE;
 
-    function qrSvg(url) {
-      const qr = qrcode(0, 'M');
-      qr.addData(url);
-      qr.make();
-      return qr.createSvgTag(8, 0);
-    }
-
-    function sign({ number, name, url, cta }) {
-      return `
-        <section class="sign">
-          <div class="brand">Eco.Abode</div>
-          <div class="number">${number}</div>
-          <h1 class="name">${name}</h1>
-          <div class="qr">${qrSvg(url)}</div>
-          <p class="cta">${cta}</p>
-          <p class="small">${url}</p>
-        </section>`;
-    }
-
-    loadGarden().then(({ stops }) => {
-      const gate = sign({ number: '★', name: 'Welcome to our garden', url: base, cta: 'Scan for the map and garden guide' });
-      const stopSigns = stops.map((s) => sign({
-        number: s.number,
-        name: s.name,
-        url: `${base}#/stop/${s.slug}`,
-        cta: 'Scan to read about this spot',
-      }));
-      document.getElementById('signs').innerHTML = gate + stopSigns.join('');
-    });
+    const qr = qrcode(0, 'M');
+    qr.addData(base);
+    qr.make();
+    document.getElementById('qr').innerHTML = qr.createSvgTag(8, 0);
+    document.getElementById('url').textContent = base;
   </script>
 </body>
 </html>

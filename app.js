@@ -51,15 +51,15 @@ function renderHome() {
       <p><strong>Accessible option:</strong> ${esc(data.accessible_note || '')}</p>
     </div>
 
-    <h2 class="section-title">The stops</h2>
+    <h2 class="section-title">About Eco.Abode</h2>
+    <ul class="links">
+      ${FEATURE_LINKS.map(([href, label]) => `<li><a href="${href}">${label}<span class="chev">›</span></a></li>`).join('')}
+    </ul>
+    <h2 class="section-title">The gardens</h2>
     <ol class="stop-list">
       ${garden.stops.map((s) => `<li><a href="#/stop/${s.slug}"><span class="num">${s.number}</span>${esc(s.name)}<span class="chev">›</span></a></li>`).join('')}
     </ol>
 
-    <h2 class="section-title">More about Eco.Abode</h2>
-    <ul class="links">
-      ${FEATURE_LINKS.map(([href, label]) => `<li><a href="${href}">${label}<span class="chev">›</span></a></li>`).join('')}
-    </ul>
     <footer class="footer">
       <p>Thanks for visiting · Shaun, Bec and Lexie</p>
       ${data.instagram ? `
@@ -116,6 +116,7 @@ async function renderPlants(focusSlug) {
     <h1 class="page-title">${esc(garden.plantIntro.data.title || 'Plant guide')}</h1>
     <div class="intro">${md(garden.plantIntro.body.replaceAll('{count}', plants.length))}</div>
     <div class="plant-filter" role="group" aria-label="Browse plants">
+      <button type="button" data-view="popular" aria-pressed="${plantView.mode === 'popular'}">Most popular</button>
       <button type="button" data-view="az" aria-pressed="${plantView.mode === 'az'}">A–Z</button>
       <button type="button" data-view="bed" aria-pressed="${plantView.mode === 'bed'}">By garden bed</button>
     </div>
@@ -136,7 +137,9 @@ async function renderPlants(focusSlug) {
 function drawPlantList() {
   const { plants, beds } = garden.plantList;
   const bedLabel = beds.find((b) => String(b.key) === plantView.bed)?.label || '';
-  const shown = plantView.mode === 'bed' ? plants.filter((p) => p.where.some((w) => String(w.key) === plantView.bed)) : plants;
+  const shown = plantView.mode === 'bed' ? plants.filter((p) => p.where.some((w) => String(w.key) === plantView.bed))
+    : plantView.mode === 'popular' ? garden.plantList.popular
+    : plants;
 
   let letter = '';
   const items = shown.map((p) => {
@@ -166,8 +169,8 @@ function drawPlantList() {
   });
 
   document.getElementById('plant-list').innerHTML = items.join('');
-  document.getElementById('plant-count').textContent = plantView.mode === 'bed'
-    ? `${shown.length} plants in ${bedLabel}`
+  document.getElementById('plant-count').textContent = plantView.mode === 'bed' ? `${shown.length} plants in ${bedLabel}`
+    : plantView.mode === 'popular' ? (garden.plantIntro.data.popular_note || 'The plants visitors ask us about most')
     : `${shown.length} plants, A–Z`;
 }
 

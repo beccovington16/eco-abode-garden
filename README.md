@@ -16,6 +16,7 @@ All the words live in the `content/` folder. You never need to touch the code to
 | About us, Trust for Nature, Fire protection | `content/pages/<page>.md` |
 | The Plant Guide (every plant, its beds and photo) | `content/plant-list.csv` |
 | The words at the top of the Plant Guide | `content/pages/plant-guide.md` |
+| The "Most popular" plants in the Plant Guide | `content/popular-plants.txt` |
 | The Wildlife page (every animal, how it was recorded, its photo) | `content/wildlife.csv` |
 | The words at the top of the Wildlife page | `content/pages/wildlife.md` |
 | Garden bed names in the Plant Guide | `content/garden-beds.txt` |
@@ -39,9 +40,9 @@ The story goes here. Leave a blank line between paragraphs.
 
 **Editing on github.com:** open the file, click the pencil icon, make your change, then click **Commit changes**. The live site updates within a minute or two.
 
-## Printing the QR signs
+## Printing the QR sign
 
-Open `signs.html` **on the live site** (the web address plus `/signs.html`) and print on A5. There's one sign for the gate and one per Stop. The QR codes use the address you open the page from, so printing from your own computer would give codes that don't work.
+Open `signs.html` (on the live site, or straight from this folder) and print on A4. It's the one welcome sign for the gate. Its QR code always opens the live site, whose address is set once near the top of the page's script (`LIVE_SITE`); change that if the site moves to a new domain.
 
 ## Previewing on your computer
 

@@ -216,11 +216,11 @@ h1, h2 { font-family: var(--heading); font-weight: 600; line-height: 1.2; }
 .where-list li { margin: 2px 0; }
 /* A–Z / By garden bed switch, bed picker and letter headings */
 .plant-filter {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0 var(--gutter) 12px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 0 var(--gutter) 12px;
   padding: 4px; background: var(--sand-deep); border-radius: var(--radius);
 }
 .plant-filter button {
-  min-height: 2.75rem; border: 0; border-radius: 10px; background: none; cursor: pointer;
+  min-height: 2.75rem; padding: 4px 6px; border: 0; border-radius: 10px; background: none; cursor: pointer;
   font: 600 .95rem/1.2 var(--body); color: var(--green-dark);
 }
 .plant-filter button[aria-pressed="true"] { background: var(--green); color: #fff; }
